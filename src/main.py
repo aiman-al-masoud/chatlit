@@ -75,9 +75,10 @@ def home():
         st.divider()
 
         st.header('Create group')
-        st.text_input('Group name')
-        st.text_input('Members (space separated usernames)')
-        st.button('Create group')
+        group_name=st.text_input('Group name')
+        members=st.text_input('Members (space separated usernames)')
+        if st.button('Create group'):
+            create_chat(group_name, members.split())
 
         st.divider()
 
